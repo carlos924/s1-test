@@ -15,24 +15,24 @@ public class ShipmentController {
     @Autowired
     private ShipmentService shipmentService;
 
-    @GetMapping("/shipment/{trackingnumber}")
+    @GetMapping("/{trackingnumber}")
     public Shipment getShipment(@PathVariable String trackingnumber) {
         return shipmentService.getShipment(trackingnumber);
     }
 
-    @PostMapping("/shipment/addshipment")
+    @PostMapping("/addshipment")
     public Shipment addShipment(@RequestBody Shipment shipment) {
         return shipmentService.addShipment(shipment);
     }
 
     @GetMapping("/getClientId/{id}")
     public Long getClientIdByShipmentId(@PathVariable Long id){
-
+        return shipmentService.getClientIdByShipmentId(id);
     }
 
     @PostMapping("/{clientid}/{shipmentid}")
-    public void addClientIdToShipmentId(Long clientid, Long shipmentid){
-
+    public void addClientIdToShipmentId(@PathVariable Long clientid, @PathVariable Long shipmentid){
+        shipmentService.addClientIdToShipmentId(clientid, shipmentid);
     }
 
 }

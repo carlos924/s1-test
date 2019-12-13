@@ -1,9 +1,12 @@
 package com.example.clientapi.controller;
 
+import com.example.clientapi.model.Client;
 import com.example.clientapi.model.ClientWithShipment;
 import com.example.clientapi.model.Input;
+import com.example.clientapi.model.JwtResponse;
 import com.example.clientapi.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,4 +23,6 @@ public class ClientController {
     public ClientWithShipment addShipment(@RequestBody Input input) {
         return clientService.addShipment(input.getName(), input.getTrackingNumber());
     }
+
+
 }

@@ -15,7 +15,7 @@ public class ClientServiceImpl implements ClientService {
     private ClientRepository clientRepository;
 
     @Autowired
-    private ShipmentRepository shipmentRepository;
+    ShipmentRepository shipmentRepository;
 
 
     @Override
@@ -41,4 +41,5 @@ public class ClientServiceImpl implements ClientService {
 
         return new ClientWithShipment(client, shipment);
     }
+
 }

@@ -16,7 +16,7 @@ public class Shipment {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @Column(name = "trackingnumber")
+  @Column(name = "trackingnumber", unique = true)
   private String trackingNumber;
 
   public Shipment() {
